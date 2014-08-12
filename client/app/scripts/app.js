@@ -27,6 +27,31 @@ angular
         controller: 'MainCtrl',
         name: 'main'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl',
+        name: 'about'
+      })
+      .when('/gallery', {
+        templateUrl: 'views/gallery.html',
+        controller: 'GalleryCtrl',
+        name: 'gallery'
+      })      
+      .when('/gallery-item', {
+        templateUrl: 'views/gallery-item.html',
+        controller: 'GalleryItemCtrl',
+        name: 'galleryItem'
+      })
+      .when('/blog', {
+        templateUrl: 'views/blog.html',
+        controller: 'BlogCtrl',
+        name: 'blog'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        name: 'contact'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -37,8 +62,10 @@ angular
       $rootScope.tagsUrl = config.apiBaseUrl + config.tagsUrl;
     }
   ])
-  .config(['$popoverProvider', function($popoverProvider) {
-    angular.extend($popoverProvider.defaults, {
-      html: true
-    })
-  }]);
+  .config(['$popoverProvider',
+    function($popoverProvider) {
+      angular.extend($popoverProvider.defaults, {
+        html: true
+      })
+    }
+  ]);

@@ -33,6 +33,7 @@
 
     <link rel="stylesheet" href="styles/index.css" type="text/css" media="screen" />    
     <link rel="stylesheet" type="text/css" href="styles/animate.css" media="screen, projection" />    
+    <link rel="stylesheet" type="text/css" href="styles/flexslider.css" media="screen, projection" />    
   </head>
   <body ng-app="mentorApp">
     <!--[if lt IE 7]>
@@ -52,32 +53,17 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">HOME</a></li>
-                    <li><a href="about-us.html">ABOUT US</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="features.html">Features</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="portfolio-item.html">Portfolio Item</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
-                            <li><a href="sign-in.html">Sign in</a></li>
-                            <li><a href="sign-up.html">Sign up</a></li>
-                            <li><a href="backgrounds.html">Backgrounds</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="pricing.html">PRICING</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="blog.html">BLOG</a></li>
-                    <li><a href="sign-up.html">Sign up</a></li>
-                    <li><a href="sign-in.html">Sign in</a></li>
+                    <li class="active"><a href="#/">Home</a></li>
+                    <li class="active"><a href="#/about">Who We Are</a></li>
+                    <li class="active"><a href="#/gallery">Photo/Video</a></li>
+                    <li class="active"><a href="#/blog">Blog</a></li>
+                    <li class="active"><a href="#/contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="" ng-view=""></div>
         <!-- starts footer -->
     <footer id="footer">
         <div class="container">
@@ -219,35 +205,70 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <!-- start script template tags -->
-    <script type="text/javascript" src="scripts\app.js"></script>
-    <script type="text/javascript" src="scripts\config.js"></script>
-    <script type="text/javascript" src="scripts\controllers\main.js"></script>
-    <script type="text/javascript" src="scripts\controllers\navBarCtrl.js"></script>
-    <script type="text/javascript" src="scripts\directives\activeUrl.js"></script>
-    <script type="text/javascript" src="scripts\directives\unique.js"></script>
-    <script type="text/javascript" src="scripts\domains\auth.js"></script>
-    <script type="text/javascript" src="scripts\filters\urls.js"></script>
-    <script type="text/javascript" src="scripts\models\base.js"></script>
-    <script type="text/javascript" src="scripts\modules\controllers.js"></script>
-    <script type="text/javascript" src="scripts\modules\directives.js"></script>
-    <script type="text/javascript" src="scripts\modules\domains.js"></script>
-    <script type="text/javascript" src="scripts\modules\filters.js"></script>
-    <script type="text/javascript" src="scripts\modules\models.js"></script>
-    <script type="text/javascript" src="scripts\modules\services.js"></script>
-    <script type="text/javascript" src="scripts\services\auth.js"></script>
-    <script type="text/javascript" src="scripts\services\localization.js"></script>
-    <script type="text/javascript" src="scripts\services\resource.js"></script>
-    <script type="text/javascript" src="scripts\services\urls.js"></script>
-    <script type="text/javascript" src="scripts\vendor\flexslider.js"></script>
-    <script type="text/javascript" src="scripts\vendor\index-slider.js"></script>
-    <script type="text/javascript" src="scripts\vendor\jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="scripts\vendor\jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="scripts\vendor\theme.js"></script>
+<script type="text/javascript" src="scripts\app.js"></script>
+<script type="text/javascript" src="scripts\config.js"></script>
+<script type="text/javascript" src="scripts\controllers\about.js"></script>
+<script type="text/javascript" src="scripts\controllers\blog.js"></script>
+<script type="text/javascript" src="scripts\controllers\contact.js"></script>
+<script type="text/javascript" src="scripts\controllers\gallery.js"></script>
+<script type="text/javascript" src="scripts\controllers\galleryItem.js"></script>
+<script type="text/javascript" src="scripts\controllers\main.js"></script>
+<script type="text/javascript" src="scripts\controllers\navBarCtrl.js"></script>
+<script type="text/javascript" src="scripts\directives\activeUrl.js"></script>
+<script type="text/javascript" src="scripts\directives\indexSlider.js"></script>
+<script type="text/javascript" src="scripts\directives\unique.js"></script>
+<script type="text/javascript" src="scripts\domains\auth.js"></script>
+<script type="text/javascript" src="scripts\filters\urls.js"></script>
+<script type="text/javascript" src="scripts\models\base.js"></script>
+<script type="text/javascript" src="scripts\modules\controllers.js"></script>
+<script type="text/javascript" src="scripts\modules\directives.js"></script>
+<script type="text/javascript" src="scripts\modules\domains.js"></script>
+<script type="text/javascript" src="scripts\modules\filters.js"></script>
+<script type="text/javascript" src="scripts\modules\models.js"></script>
+<script type="text/javascript" src="scripts\modules\services.js"></script>
+<script type="text/javascript" src="scripts\services\auth.js"></script>
+<script type="text/javascript" src="scripts\services\localization.js"></script>
+<script type="text/javascript" src="scripts\services\resource.js"></script>
+<script type="text/javascript" src="scripts\services\urls.js"></script>
+<script type="text/javascript" src="scripts\vendor\flexslider.js"></script>
+<script type="text/javascript" src="scripts\vendor\index-slider.js"></script>
+<script type="text/javascript" src="scripts\vendor\jquery.countdown.min.js"></script>
+<script type="text/javascript" src="scripts\vendor\jquery.isotope.min.js"></script>
+<script type="text/javascript" src="scripts\vendor\theme.js"></script>
 <!-- end script template tags -->
         <!-- endbuild -->
 
     <script src="scripts/vendor/theme.js"></script>
 
     <script type="text/javascript" src="scripts/vendor/index-slider.js"></script> 
+        <script type="text/javascript" src="scripts/vendor/flexslider.js"></script>
+        <script src="scripts/vendor/jquery.isotope.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+
+            var $container = $('#gallery_container'),
+                  $filters = $("#filters a");
+        
+            $container.imagesLoaded( function(){
+                $container.isotope({
+                    itemSelector : '.photo',
+                    masonry: {
+                        columnWidth: 100
+                    }
+                });
+            });
+
+            // filter items when filter link is clicked
+            $filters.click(function() {
+                $filters.removeClass("active");
+                $(this).addClass("active");
+                var selector = $(this).data('filter');
+                $container.isotope({ filter: selector });
+                return false;
+            });
+        
+        
+        });
+    </script>
 </body>
 </html>
