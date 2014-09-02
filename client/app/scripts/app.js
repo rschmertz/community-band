@@ -47,6 +47,11 @@ angular
         controller: 'BlogCtrl',
         name: 'blog'
       })
+      .when('/blog2/', {
+        templateUrl: 'views/blog2.html',
+        controller: 'BlogCtrl',
+        name: 'blog'
+      })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',

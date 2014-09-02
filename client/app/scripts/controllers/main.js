@@ -4,7 +4,7 @@ angular.module('mentorApp.controllers.main', [])
   .controller('MainCtrl', ['$scope', function ($scope) {
     var center = $(window).width() / 2;
 $(document).ready(function () {
-    function d() {
+    /*function d() {
         $(".slide.active img").each(function () {
             var g = parseInt($(this).attr("class").split(" ")[1].replace("left", ""));
             var i = g + center;
@@ -29,7 +29,7 @@ $(document).ready(function () {
                 $("#feature_slider").removeClass()
             })
         }, 800)
-    }
+    }*/
     function c() {
         $("#feature_slider").addClass("disabled").append('<ul id="pagination" /><a href="" id="slide-left" /><a href="" id="slide-right" />');
         $("#feature_slider article").each(function () {
@@ -162,13 +162,13 @@ $(document).ready(function () {
             i()
         }, 5000)
     }
-    c();
+    //c();
     $(window).resize(function () {
         $("#pagination").css({
             left: ($(window).width() - $("#pagination li").length * 14) / 2
         });
         center = $(window).width() / 2;
-        d()
+        //d()
     });
 });
   }]);

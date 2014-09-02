@@ -3,7 +3,7 @@
 #feature_slider {
   height: 720px;
   height: 480px;
-  background: #262626;
+  background: #000000;
   z-index: 1;
   margin-bottom: 40px; }
   #feature_slider h1 {
@@ -53,9 +53,12 @@
         opacity: 1; }
   #feature_slider .slide {
     width: 100%;
+    max-width: 1420px;
+    margin-left: auto;
+    margin-right: auto;
     /*height: 720px;*/
     height: 480px;
-    position: absolute;
+    /*position: absolute;*/
     display: none;
     overflow: hidden;
     z-index: 1;
