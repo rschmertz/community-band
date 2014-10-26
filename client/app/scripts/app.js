@@ -29,8 +29,8 @@ angular
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        name: 'about'
+          //controller: 'AboutCtrl',
+        name: 'abgout' // What does this do?
       })
       .when('/gallery', {
         templateUrl: 'views/gallery.html',
@@ -51,6 +51,9 @@ angular
         templateUrl: 'views/blog2.html',
         controller: 'BlogCtrl',
         name: 'blog'
+      })
+      .when('/documents/', {
+        templateUrl: 'views/docs.html',
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
