@@ -1304,3 +1304,11 @@
     width: 60%; }
   #contact .map .box_wrapp {
     width: 100%; } }
+
+.concert-program td {
+    padding: 7px;
+}
+
+.concert-program {
+    margin-left: 20px;
+}
