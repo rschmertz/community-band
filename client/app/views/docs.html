@@ -1,4 +1,4 @@
-<div id="docs">
+<div id="docs" ng-controller="docListCtrl as doclist">
   <div class="container">
     <div class="section_header">
       <h3>Reference Files</h3>
@@ -8,9 +8,7 @@
     </div>
     <div class="file-list-lg">
       <div class="row">
-	<file-item>
-	</file-item>
-	<file-item>
+	<file-item ng-repeat="item in doclist.doclist1">
 	</file-item>
       </div>
       <div class="row">
@@ -20,10 +18,10 @@
   <script type="text/ng-template" id="fileItemTpl">
     <div class="col-sm-3">
       <div class="file-icon"> 
-	<img src="img/file-icons/docx/docx_win-64_32.png">
+	<img src="{{ doclist.icons[item.fileType] }}">
       </div>
-      <h6><a href="https://www.dropbox.com/s/2cpdryl61w82fz0/BandBrochure.docx?dl=1">Rules and Procedures</a></h6>
-      This file is a must-read for all members.  Members must read it and commit the contents to heart, or be prepared to suffer the consequences.
+      <h6><a href="{{item.url}}">{{item.name}}</a></h6>
+      {{item.description}}
     </div>
   </script>
 </div>
