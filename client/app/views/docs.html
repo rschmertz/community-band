@@ -18,9 +18,9 @@
   <script type="text/ng-template" id="fileItemTpl">
     <div class="col-sm-3">
       <div class="file-icon"> 
-	<img src="{{ doclist.icons[item.fileType] }}">
+	<img src="{{ doclist.getIcon(item.url) }}">
       </div>
-      <h6><a href="{{item.url}}">{{item.name}}</a></h6>
+      <h6><a href="{{doclist.adjustUrl(item.url)}}">{{doclist.getFileName(item.url)}}</a></h6>
       {{item.description}}
     </div>
   </script>
