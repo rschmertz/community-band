@@ -27,12 +27,42 @@ angular.module('mentorApp')
         };
         this.doclist1 = [
             {
-                description: "This file is a must-read for all members.  Members must read it and commit the contents to heart, or be prepared to suffer the consequences.",
-                url: "https://www.dropbox.com/s/2cpdryl61w82fz0/BandBrochure.docx?dl=1"
+                description: "Performance schedule for Spring 2015",
+                url: "https://www.dropbox.com/s/rpzmnyv0ekazgh5/2015%20Spring.pdf?dl=0"
+            },
+	    {
+		description: "Publicity write-up for Bowie concert, April 19, 2015",
+		url: "https://www.dropbox.com/s/rjv7dt79menw7wf/MCBPubliciityforApr19BCPA.pdf?dl=0"
+	    },
+	    {
+		description: "Promotional flyer for Bowie concert, April 19, 2015",
+		url: "https://www.dropbox.com/s/entn076kf4iavl1/BCPA%20Flyer%20April19%20v5.pdf?dl=0"
+	    }
+        ];
+        this.doclist2 = [
+            {
+                description: "Sign-up sheet for Band Librarian Committee",
+                url: "https://www.dropbox.com/s/hnwiyam9owvr7dl/BAND%20LIBRARIAN.docx?dl=0"
             },
             {
-                description: "this is just really just a pdf",
-                url: "https://www.dropbox.com/s/47nnoenpyjhxggs/agenda%203-10-14.pdf?dl=1"
+                description: "Sign-up sheet for Concert Venues Committee",
+                url: "https://www.dropbox.com/s/iez9zk8f1ygi5ai/CONCERT%20VENUES.docx?dl=0"
+            },
+            {
+                description: "Sign-up sheet for Hospitality Committee",
+                url: "https://www.dropbox.com/s/ra0qrx38cm5zan1/HOSPITALITY.docx?dl=0"
+            },
+            {
+                description: "Sign-up sheet for Band History Committee",
+                url: "https://www.dropbox.com/s/j87yj663y209yr8/BAND%20HISTORY.docx?dl=0"
+            },
+            {
+                description: "Sign-up sheet for Membership Committee",
+                url: "https://www.dropbox.com/s/3bm00xhnoyxgaij/MEMBERSHIP.docx?dl=0"
+            },
+            {
+                description: "Sign-up sheet for Publicity Committee",
+                url: "https://www.dropbox.com/s/2g8buudjzuj4n94/PUBLICITY.docx?dl=0"
             }
-        ];
+	];
     });
