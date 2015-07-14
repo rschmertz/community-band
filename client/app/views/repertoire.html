@@ -12,7 +12,7 @@
 		    <ul>
 		      <li ng-repeat="piece in cat.listing">
 			<span ng-if="piece.link">
-			  <a href="{{piece.link}}">{{piece.name}}</a>
+			  <a href="{{adjustUrl(piece.link)}}">{{piece.name}}</a>
 			</span>
 			<span ng-if="!piece.link">
 			  {{piece.name}}

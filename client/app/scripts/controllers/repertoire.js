@@ -2,6 +2,11 @@
 
 angular.module('mentorApp.controllers.about', [])
   .controller('RepertoireCtrl', ['$scope', function ($scope) {
+
+      $scope.adjustUrl = function(url) {
+          return url.replace(/dl=0$/, "dl=1");
+      };
+
       $scope.rep = [
           {
               genre: 'Classical',
