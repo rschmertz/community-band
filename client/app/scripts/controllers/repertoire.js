@@ -38,7 +38,8 @@ angular.module('mentorApp.controllers.about', [])
                   },{
                       name: "The Stars and Stripes Forever March – JP Sousa",
                   },{
-                      name: "Moorside March – G Holst"
+                      name: "Moorside March – G Holst",
+                      link: "https://www.dropbox.com/s/lpmwyuk6jxmzgd7/FirstSuiteEbMilitaryBand_Holst_02NOV2011.mp3?dl=0",
                   }
               ]
           }, {
@@ -67,7 +68,8 @@ angular.module('mentorApp.controllers.about', [])
               genre: "Broadway/Musicals",
               listing: [
                   {
-                      name: "Summertime (Porgy & Bess) – G Gershwin",
+                      name: "Summertime (Porgy & Bess) – G Gershwin (Millicent Scarlett, soprano)",
+                      link: "https://www.dropbox.com/s/yemi5t2z1invaoc/Summertime_GershwinMillicentScarlett%2CSoprano%2924June2011.mp3?dl=0",
                   },{
                       name: "Seventy-Six Trombones – M Willson",
                   },{
@@ -84,6 +86,7 @@ angular.module('mentorApp.controllers.about', [])
                       name: "An Irish Rhapsody – C Grundman",
                     },{
                         name: "Loch Lomond – F Ticheli",
+                        link: "https://www.dropbox.com/s/v84r3g6y4kzcblc/LochLomond_Tichelli_02NOV2011.mp3?dl=0",
                     },{
                         name: "Irish Tune from County Derry – P Grainger"
                     }
@@ -95,6 +98,7 @@ angular.module('mentorApp.controllers.about', [])
                       name: "An Outdoor Overture – A Copland",
                   },{
                       name: "October – E Whitacre",
+                      link: "https://www.dropbox.com/s/blu0z1w1z25ufi1/October_Whitacre_31OCT2012.mp3?dl=0",
                   },{
                       name: "O Magnum Mysterium – Lauridsen",
                   }
@@ -104,13 +108,17 @@ angular.module('mentorApp.controllers.about', [])
 
       $scope.soloistRep = [
           {
-              name: "They Can’t Take That Away From Me – G Gershwin (Millicent Scarlet, soprano)",
+              name: "They Can’t Take That Away From Me – G Gershwin (Millicent Scarlett, soprano)",
+              linky: "https://www.dropbox.com/s/xbpp5q2ezhpz8x4/TheyCantTakeThatAwayFromMe_Gershwin%28MillicentScarlett%2CSoprano%29_19JUN2013.mp3?dl=0",
           },{
               name: "Take The A Train – B Strayhorn (Chris Vadala, saxophone)",
+              link: "https://www.dropbox.com/s/727v2y5t77o1744/TakeTheATrain_Strayhorn%28ChrisVadala%2CSaxophone%29_24June2011.mp3?dl=0",
           },{
               name: "Meditation from “Thaïs” – Massenet (Daniel Sender, violin)",
+              link: "https://www.dropbox.com/s/2ro467ocgvl9347/MeditationfromThais_Massenet%28DanielSender%2CViolin%29_09DEC2011.mp3?dl=0",
           },{
               name: "Variations on Napoli – Bellstedt (Jermaine Fryer, euphonium)",
+              link: "https://www.dropbox.com/s/xhywf3br5k5xn9c/VariationsOnNapoli_Bellstedt%28JermaineFryer%2CEuphonium%29.mp3?dl=0",
           }
       ];
 

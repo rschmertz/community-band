@@ -22,11 +22,16 @@
 		  </div>
 
 		  <h3>Soloists</h3>
-		  The band frequently features soloists, particularly during its summer season.  Some regulars include Chris Vadala (saxophone) performing big band and jazz scores and Millicent Scarlett (soprano) singing Broadway favorites.  The band is also proud to have featured several talented graduate students from the School of Music in several of its concerts.  Several soundsclips from soloist performances are below.<br/>
+		  The band frequently features soloists, particularly during its summer season.  Some regulars include Chris Vadala (saxophone) performing big band and jazz scores and Millicent Scarlett (soprano) singing Broadway favorites.  The band is also proud to have featured several talented graduate students from the School of Music in several of its concerts.  Several soundclips from soloist performances are below.<br/>
 		  <h4>Samples</h4>
 		  <ul>
 		    <li ng-repeat="piece in soloistRep">
-		      {{piece.name}}
+		      <span ng-if="piece.link">
+			<a href="{{adjustUrl(piece.link)}}">{{piece.name}}</a>
+		      </span>
+		      <span ng-if="!piece.link">
+			{{piece.name}}
+		      </span>
 		    </li>
 		  </ul>
                 </div>
