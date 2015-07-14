@@ -1,0 +1,51 @@
+
+    <div xng-controller="RepertoireCtrl" id="repertoire">
+        <div class="container">
+            <div class="section_header">
+                <h3>Repertoire</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 intro">
+		  The band plays a wide variety of musical styles ranging from classical to swing big band.  Some examples of recently performed works include:
+		  <div ng-repeat="cat in rep">
+		    <h4>{{cat.genre}}</h4>
+		    <ul>
+		      <li ng-repeat="piece in cat.listing">
+			<span ng-if="piece.link">
+			  <a href="{{piece.link}}">{{piece.name}}</a>
+			</span>
+			<span ng-if="!piece.link">
+			  {{piece.name}}
+			</span>
+		      </li>
+		    </ul>
+		  </div>
+
+		  <h3>Soloists</h3>
+		  The band frequently features soloists, particularly during its summer season.  Some regulars include Chris Vadala (saxophone) performing big band and jazz scores and Millicent Scarlett (soprano) singing Broadway favorites.  The band is also proud to have featured several talented graduate students from the School of Music in several of its concerts.  Several soundsclips from soloist performances are below.<br/>
+		  <h4>Samples</h4>
+		  <ul>
+		    <li ng-repeat="piece in soloistRep">
+		      {{piece.name}}
+		    </li>
+		  </ul>
+                </div>
+                <div class="col-sm-6">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                              <img src="img/TGa MDCommBand@Columbia 6-19-13 cropped.jpg" />
+                            </li>
+                            <!-- <li>
+                              <img src="img/about_slide1.jpg" />
+                            </li>
+                            <li>
+                              <img src="img/about_slide1.jpg" />
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

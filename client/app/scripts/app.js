@@ -32,6 +32,10 @@ angular
           //controller: 'AboutCtrl',
         name: 'abgout' // What does this do?
       })
+      .when('/repertoire', {
+        templateUrl: 'views/repertoire.html',
+        controller: 'RepertoireCtrl',
+      })
       .when('/gallery', {
         templateUrl: 'views/gallery.html',
         controller: 'GalleryCtrl',
