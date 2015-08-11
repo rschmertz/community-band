@@ -27,8 +27,8 @@ angular.module('mentorApp')
         };
         this.doclist1 = [
             {
-                description: "Performance schedule for Spring 2015",
-                url: "https://www.dropbox.com/s/rpzmnyv0ekazgh5/2015%20Spring.pdf?dl=0"
+                description: "Promotional flyer for NextNOW concert 2015",
+                url: "https://www.dropbox.com/s/gnaoj110ali4dg8/MDCB%20Concert%20Flyer%209.10.15-Composers-FINAL-Indent.pdf?dl=0"
             },
 	    {
 		description: "Publicity write-up for Bowie concert, April 19, 2015",
