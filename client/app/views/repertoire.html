@@ -13,6 +13,9 @@
 		      <li ng-repeat="piece in cat.listing">
 			<span ng-if="piece.link">
 			  <a href="{{adjustUrl(piece.link)}}">{{piece.name}}</a>
+			  <audio>
+			    <source src="{{adjustUrl(piece.link)}}" type='audio/mpeg; codecs="mp3"'>
+			  </audio>
 			</span>
 			<span ng-if="!piece.link">
 			  {{piece.name}}
