@@ -16,7 +16,7 @@ angular.module('mentorApp')
 
         var fileNameRegex = new RegExp("http.*box.com/s/[a-z0-9]+/(.+\.(pdf|doc|docx))\\?dl=.");
         this.getFileName = function(url) {
-            return url.match(fileNameRegex)[1];
+            return decodeURI(url.match(fileNameRegex)[1]);
         };
         this.getIcon = function(url) {
             var match = url.match(fileNameRegex);
@@ -41,28 +41,32 @@ angular.module('mentorApp')
         ];
         this.doclist2 = [
             {
-                description: "Sign-up sheet for Band Librarian Committee",
+                description: "Band Librarian Committee",
                 url: "https://www.dropbox.com/s/hnwiyam9owvr7dl/BAND%20LIBRARIAN.docx?dl=0"
             },
             {
-                description: "Sign-up sheet for Concert Venues Committee",
+                description: "Concert Venues Committee",
                 url: "https://www.dropbox.com/s/iez9zk8f1ygi5ai/CONCERT%20VENUES.docx?dl=0"
             },
             {
-                description: "Sign-up sheet for Hospitality Committee",
+                description: "Hospitality Committee",
                 url: "https://www.dropbox.com/s/ra0qrx38cm5zan1/HOSPITALITY.docx?dl=0"
             },
             {
-                description: "Sign-up sheet for Band History Committee",
+                description: "Band History Committee",
                 url: "https://www.dropbox.com/s/j87yj663y209yr8/BAND%20HISTORY.docx?dl=0"
             },
             {
-                description: "Sign-up sheet for Membership Committee",
+                description: "Membership Committee",
                 url: "https://www.dropbox.com/s/3bm00xhnoyxgaij/MEMBERSHIP.docx?dl=0"
             },
             {
-                description: "Sign-up sheet for Publicity Committee",
+                description: "Publicity Committee",
                 url: "https://www.dropbox.com/s/2g8buudjzuj4n94/PUBLICITY.docx?dl=0"
-            }
-	];
+            },
+            {
+                description: "Website Committee",
+                url: "https://www.dropbox.com/s/1iw069bxnww8ijk/WEBSITE.docx?dl=0"
+            },
+        ];
     });
