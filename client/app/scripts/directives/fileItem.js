@@ -27,17 +27,17 @@ angular.module('mentorApp')
         };
         this.doclist1 = [
             {
+                description: "Section Leaders",
+                url: "https://www.dropbox.com/s/3bx8wxe1ny3ttsp/Section%20Leaders.docx?dl=0"
+            },
+            {
+                description: "Concert Schedule for Fall 2015",
+                url: "https://www.dropbox.com/s/6lwakm2x4s9japs/2015%20Fall.docx?dl=0"
+            },
+            {
                 description: "Promotional flyer for NextNOW concert 2015",
                 url: "https://www.dropbox.com/s/gnaoj110ali4dg8/MDCB%20Concert%20Flyer%209.10.15-Composers-FINAL-Indent.pdf?dl=0"
             },
-	    {
-		description: "Publicity write-up for Bowie concert, April 19, 2015",
-		url: "https://www.dropbox.com/s/rjv7dt79menw7wf/MCBPubliciityforApr19BCPA.pdf?dl=0"
-	    },
-	    {
-		description: "Promotional flyer for Bowie concert, April 19, 2015",
-		url: "https://www.dropbox.com/s/entn076kf4iavl1/BCPA%20Flyer%20April19%20v5.pdf?dl=0"
-	    }
         ];
         this.doclist2 = [
             {
