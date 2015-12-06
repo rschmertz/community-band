@@ -8,6 +8,7 @@ angular.module('mentorApp')
 	    }
 	};
     }).controller("docListCtrl", function () {
+        // We'll add some changes here
         this.icons = {
             doc: "img/file-icons/docx/docx_win-64_32.png",
             docx: "img/file-icons/docx/docx_win-64_32.png",
