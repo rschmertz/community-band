@@ -1,5 +1,5 @@
 var module = angular.module('tester', ['ngResource']);
-module.controller('testCtrl', function ($scope, $http, $timeout, CardList, Card) {
+module.controller('testCtrl', function ($scope, $http, $timeout, $q, CardList, CardAttachments) {
     $scope.phones = [
         {'name': 'Nexus S',
          'snippet': 'Fast just got faster with Nexus S.'},
@@ -16,9 +16,17 @@ module.controller('testCtrl', function ($scope, $http, $timeout, CardList, Card)
         console.log($scope.cardList)
         console.log(one);
         console.log(two);
+        var promises =[];
         cardList.forEach(function (card) {
-            
-
+            //console.dir(card);
+            var what = CardAttachments.query({ id: card.id });
+            promises.push(what);
+            card.attachments = what;
+        });
+        $q.all(promises).then(function (data) {
+            //console.dir(data);
+            $scope.cardList = cardList;
+        });
     });
 
     //$scope.cardList.get();
@@ -26,6 +34,6 @@ module.controller('testCtrl', function ($scope, $http, $timeout, CardList, Card)
     .factory('CardList', function($resource) {
         return $resource('https://api.trello.com/1/lists/566397b374bba06e49402f2d/cards'); // Note the full endpoint address
     })
-    .factory('Card', function ($resource) {
-        return $resource('https://api.trello.com/1/cards/:id');
+    .factory('CardAttachments', function ($resource) {
+        return $resource('https://api.trello.com/1/cards/:id/attachments');
     });
