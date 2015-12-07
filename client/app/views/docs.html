@@ -20,10 +20,10 @@
   <script type="text/ng-template" id="fileItemTpl">
     <div class="col-sm-3">
       <div class="file-icon"> 
-	<img src="{{ doclist.getIcon(item.url) }}">
+	<img src="{{ doclist.getIcon(item.attachment[0].name) }}">
       </div>
-      <h6><a href="{{doclist.adjustUrl(item.url)}}">{{doclist.getFileName(item.url)}}</a></h6>
-      {{item.description}}
+      <h6><a href="{{doclist.adjustUrl(item.attachment[0].url)}}">{{item.attachment[0].name}}</a></h6>
+      {{item.name}}
     </div>
   </script>
 </div>
