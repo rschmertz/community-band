@@ -7,13 +7,16 @@ angular.module('mentorApp')
         
 	    }
 	};
-    }).controller("docListCtrl", ['$http', function ($http) {
+    }).controller("docListCtrl", ['$http', 'CardList', 'CardAttachments', function ($http, CardList, CardAttachments) {
         // We'll add some changes here
         this.icons = {
             doc: "img/file-icons/docx/docx_win-64_32.png",
             docx: "img/file-icons/docx/docx_win-64_32.png",
             pdf: "img/file-icons/pdf/pdf-64_32.png"
         };
+
+        console.log(CardList);
+        console.log("fjdkfl f df ds'");
 
         this.doclist1 = [];
         var self = this;
@@ -33,13 +36,13 @@ angular.module('mentorApp')
                     console.log("Stupid url", card.url);
                     cardThing.attachment = $http.get('https://api.trello.com/1/cards/' + card.id + '/attachments')
                         .success(function (data, status) {
-                            /*
+                            if (false) {
                             data.forEach(function(attachment) {
                                 console.log("Hey, it's at " + attachment.url);
                                 console.log("oh, the attachment is ", attachment);
                                 cardThing.attachment = attachment;
                             });
-                            */
+                            };
                         })
                         .error(function (data, status) {
                             console.log("problem getting attachments");
