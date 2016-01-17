@@ -171,4 +171,16 @@ $(document).ready(function () {
         //d()
     });
 });
-  }]);
+
+
+  }])
+    .controller('EventsCtrl', ['$scope', 'Events', function ($scope, Events) {
+
+        this.eventList = [];
+        var self = this;
+
+        Events.query(function(data, extra) {
+            console.log("events query data is", data);
+            self.eventList = data;
+        });
+    }]);

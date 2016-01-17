@@ -26,8 +26,6 @@ angular.module('mentorApp')
 
         CardList.query(function (one, two) {
             cardList = one;
-            console.log(one);
-            console.log(two);
             var promises =[];
             cardList.forEach(function (card) {
                 var what = CardAttachments.query({ id: card.id }, function (data) {
