@@ -176,7 +176,7 @@ $(document).ready(function () {
   }])
     .controller('EventsCtrl', ['$scope', 'Events', function ($scope, Events) {
 
-        this.eventList = [];
+        this.eventList = [];//{name: 'name1', due: 'due1', simpleLocation: 'dekelboum'}];
         var self = this;
 
         Events.query(function(data, extra) {
