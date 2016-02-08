@@ -1312,3 +1312,7 @@
 .concert-program {
     margin-left: 20px;
 }
+
+#logo-img {
+    float: left;
+}
