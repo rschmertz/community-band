@@ -8,8 +8,19 @@
     </div>
     <div class="file-list-lg">
       <div class="row">
-	<file-item ng-repeat="item in doclist.doclist1">
-	</file-item>
+
+    <div class="col-sm-3" ng-repeat="item in doclist.doclist1">
+      <div class="file-icon">
+	<img src="{{ item.attachments[0].icon }}">
+      </div>
+<!--
+      <h6><a href="{{ doclist.adjustUrlSpecial(item.attachments) }}">{{item.attachments[0].name}}</a></h6>
+      -->
+      <h6><a href="{{ item.attachments[0].fixedUrl }}">{{item.attachments[0].name}}</a></h6>
+      {{item.name}}
+    </div>
+
+
       </div>
       <div class="row">
 	<file-item ng-repeat="item in doclist.doclist2">
@@ -18,12 +29,5 @@
     </div>
   </div>
   <script type="text/ng-template" id="fileItemTpl">
-    <div class="col-sm-3">
-      <div class="file-icon"> 
-	<img src="{{ doclist.getIcon(item.url) }}">
-      </div>
-      <h6><a href="{{doclist.adjustUrl(item.url)}}">{{doclist.getFileName(item.url)}}</a></h6>
-      {{item.description}}
-    </div>
   </script>
 </div>

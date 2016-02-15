@@ -7,66 +7,55 @@ angular.module('mentorApp')
         
 	    }
 	};
-    }).controller("docListCtrl", function () {
+    }).controller("docListCtrl", ['$http', '$q', 'CardList', 'CardAttachments', 'DocUtils', function ($http, $q, CardList, CardAttachments, DocUtils) {
+        // We'll add some changes here
         this.icons = {
             doc: "img/file-icons/docx/docx_win-64_32.png",
             docx: "img/file-icons/docx/docx_win-64_32.png",
             pdf: "img/file-icons/pdf/pdf-64_32.png"
         };
 
+        console.log(CardList);
+        console.log("fjdkfl f df ds'");
+
+        this.doclist1 = [];
+        var self = this;
+
+        // "Documents" list
+        var cardList;
+
+        CardList.query(function (one, two) {
+            cardList = one;
+            var promises =[];
+            cardList.forEach(function (card) {
+                var what = CardAttachments.query({ id: card.id }, function (data) {
+                    data.forEach(function(attachment) {
+                        attachment.icon = DocUtils.getIcon(attachment.name);
+                        attachment.fixedUrl = DocUtils.adjustUrl(attachment.url);
+                    });
+                });
+                promises.push(what);
+            });
+            $q.all(promises).then(function (data) {
+                for (var i = 0; i < data.length && i < cardList.length; i++) {
+                    cardList[i].attachments = data[i];
+                };
+                var firstCard = cardList[0];
+                self.doclist1 = cardList;
+            });
+        });
+
         var fileNameRegex = new RegExp("http.*box.com/s/[a-z0-9]+/(.+\.(pdf|doc|docx))\\?dl=.");
+        fileNameRegex = new RegExp(".+\.(pdf|doc|docx)");
         this.getFileName = function(url) {
             return decodeURI(url.match(fileNameRegex)[1]);
         };
         this.getIcon = function(url) {
             var match = url.match(fileNameRegex);
-            return this.icons[match[2]];
+            console.log("matchi is ", match[1]);
+            return this.icons[match[1]];
         };
         this.adjustUrl = function(url) {
             return url.replace(/dl=0$/, "dl=1");
         };
-        this.doclist1 = [
-            {
-                description: "Section Leaders",
-                url: "https://www.dropbox.com/s/3bx8wxe1ny3ttsp/Section%20Leaders.docx?dl=0"
-            },
-            {
-                description: "Concert Schedule for Fall 2015",
-                url: "https://www.dropbox.com/s/6lwakm2x4s9japs/2015%20Fall.docx?dl=0"
-            },
-            {
-                description: "Promotional flyer for NextNOW concert 2015",
-                url: "https://www.dropbox.com/s/gnaoj110ali4dg8/MDCB%20Concert%20Flyer%209.10.15-Composers-FINAL-Indent.pdf?dl=0"
-            },
-        ];
-        this.doclist2 = [
-            {
-                description: "Band Librarian Committee",
-                url: "https://www.dropbox.com/s/hnwiyam9owvr7dl/BAND%20LIBRARIAN.docx?dl=0"
-            },
-            {
-                description: "Concert Venues Committee",
-                url: "https://www.dropbox.com/s/iez9zk8f1ygi5ai/CONCERT%20VENUES.docx?dl=0"
-            },
-            {
-                description: "Hospitality Committee",
-                url: "https://www.dropbox.com/s/ra0qrx38cm5zan1/HOSPITALITY.docx?dl=0"
-            },
-            {
-                description: "Band History Committee",
-                url: "https://www.dropbox.com/s/j87yj663y209yr8/BAND%20HISTORY.docx?dl=0"
-            },
-            {
-                description: "Membership Committee",
-                url: "https://www.dropbox.com/s/3bm00xhnoyxgaij/MEMBERSHIP.docx?dl=0"
-            },
-            {
-                description: "Publicity Committee",
-                url: "https://www.dropbox.com/s/2g8buudjzuj4n94/PUBLICITY.docx?dl=0"
-            },
-            {
-                description: "Website Committee",
-                url: "https://www.dropbox.com/s/1iw069bxnww8ijk/WEBSITE.docx?dl=0"
-            },
-        ];
-    });
+    }]);

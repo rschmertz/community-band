@@ -171,4 +171,32 @@ $(document).ready(function () {
         //d()
     });
 });
-  }]);
+
+
+  }])
+    .controller('EventsCtrl', ['$scope', 'Events', function ($scope, Events) {
+
+        this.eventList = [];//{name: 'name1', due: 'due1', simpleLocation: 'dekelboum'}];
+        var self = this;
+
+        Events.query(function(data, extra) {
+            console.log("events query data is", data);
+            self.eventList = data;
+        });
+    }])
+.filter('futurePast', function () {
+    return function (eventlist, past) {
+        var output = [];
+        var today = new Date();
+        past = past || false
+        eventlist.forEach(function(event) {
+            var d = new Date(event.due);
+            if ((d >= today) != past) {
+                output.push(event);
+            }
+        });
+        return output.sort(function (a, b) {
+            return (new Date(a.due) > new Date(b.due)) && !past;
+        });
+    };
+})
