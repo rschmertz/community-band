@@ -75,25 +75,25 @@
                      Upcoming Events
                   </h3>
                   <div class="events-outer">
-                     <div class="individual-event" ng-repeat="event in events.eventList">
+                     <div class="individual-event" ng-repeat="event in events.eventList | futurePast">
                         <h4>{{ event.name }}</h4>
-			<p><em>{{ event.due }}</em></p>
+			<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
 			{{ event.desc }}
                      </div>
                   </div>
                </div>
             </div>
             <!-- Feature -->
-            <div class="col-sm-4 feature last">
+            <div class="col-sm-4 feature last" ng-controller="EventsCtrl as events">
                 <div class="text">
                   <h3 class="footer_header">
-                     Latest Updates
+                     Recent Concerts
                   </h3>
                   <div class="events-outer">
-                     <div class="individual-event">
-                        <h4><a href="/index.html#/blog">Heritage Harbor Concert</a></h4>
-                        <p>Posted: May 12, 2015</p>
-			Our final concert of the season will be at the Heritage Harbor Community in Annapolis on Sunday ...
+                     <div class="individual-event" ng-repeat="event in events.eventList | futurePast : true">
+                        <h4>{{ event.name }}</h4>
+			<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
+			{{ event.desc }}
                      </div>
                   </div>
                </div>
