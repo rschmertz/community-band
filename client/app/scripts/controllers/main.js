@@ -174,14 +174,31 @@ $(document).ready(function () {
 
 
   }])
-    .controller('EventsCtrl', ['$scope', 'Events', function ($scope, Events) {
+    .controller('EventsCtrl', ['$scope', '$q', 'Events', 'CardAttachments', function ($scope, $q, Events, CardAttachments) {
 
         this.eventList = [];//{name: 'name1', due: 'due1', simpleLocation: 'dekelboum'}];
         var self = this;
 
         Events.query(function(data, extra) {
             console.log("events query data is", data);
-            self.eventList = data;
+            var promises = [];
+            var cardList = data;
+            //self.eventList = data;
+            cardList.forEach(function (card) {
+                var what = CardAttachments.query({ id: card.id }, function (data) {
+                    data.forEach(function(attachment) {
+                        
+                    });
+                })
+                promises.push(what);
+            });
+            $q.all(promises).then(function (data) {
+                for (var i = 0; i < data.length && i < cardList.length; i++) {
+                    cardList[i].attachments = data[i];
+                };
+                self.eventList = cardList;
+            });
+
         });
     }])
 .filter('futurePast', function () {

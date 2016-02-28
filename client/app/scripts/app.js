@@ -54,6 +54,9 @@ angular
       .when('/press/', {
         templateUrl: 'views/press.html',
       })
+      .when('/events/', {
+        templateUrl: 'views/events.html',
+      })
       .when('/blog2/', {
         templateUrl: 'views/blog2.html',
         controller: 'BlogCtrl',

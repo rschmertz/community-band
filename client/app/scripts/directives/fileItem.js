@@ -40,7 +40,6 @@ angular.module('mentorApp')
                 for (var i = 0; i < data.length && i < cardList.length; i++) {
                     cardList[i].attachments = data[i];
                 };
-                var firstCard = cardList[0];
                 self.doclist1 = cardList;
             });
         });
