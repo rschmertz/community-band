@@ -178,16 +178,26 @@ $(document).ready(function () {
 
         this.eventList = [];//{name: 'name1', due: 'due1', simpleLocation: 'dekelboum'}];
         var self = this;
+        var imgNameRegex = new RegExp(".+\.(png|jpg|gif)");
+        var docNameRegex = new RegExp(".+\.(pdf|doc|docx)");
 
         Events.query(function(data, extra) {
             console.log("events query data is", data);
             var promises = [];
             var cardList = data;
-            //self.eventList = data;
             cardList.forEach(function (card) {
+                card.doclist = [];
                 var what = CardAttachments.query({ id: card.id }, function (data) {
                     data.forEach(function(attachment) {
-                        
+                        if (attachment.name.match(imgNameRegex)) {
+                            if (!card.image) {
+                                card.image = attachment;
+                                var index = Math.min(4, attachment.previews.length - 1); // Don't pick a preview size larger than 4
+                                card.largeImage = attachment.previews[index];
+                            };
+                        } else if (attachment.name.match(docNameRegex)) {
+                            doclist.push(attachment);
+                        }
                     });
                 })
                 promises.push(what);
