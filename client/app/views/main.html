@@ -78,7 +78,6 @@
                      <div class="individual-event" ng-repeat="event in events.eventList | futurePast">
                         <h4>{{ event.name }}</h4>
 			<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
-			<img ng-src="{{event.image.previews[2].url}}" />
 			<p>
 			{{ event.desc }}
 			</p>

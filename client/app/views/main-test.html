@@ -1,0 +1,59 @@
+<section id="feature_slider" index-slider class="lol">
+   <article class="slide" id="showcasing" style="background: url('img/mcb-group-photo.jpg?t=1') repeat-x top center; display: block;">
+      <!-- <img class="asset left-30 sp600 t120 z1" src="img/slides/scene1/macbook.png" /> -->
+      <div class="info">
+         <h2>Welcome to the Maryland Community Band online!</h2>
+      </div>
+   </article>
+</section>
+<div id="showcase">
+   <div class="container">
+      <div class="row feature_wrapper">
+         <!-- Features Row -->
+         <div class="features_op1_row">
+            <!-- Feature -->
+            <div class="col-sm-4 feature first">
+               <div class="text">
+                  <p>
+                  <h3>An Adult Ensemble</h3>
+                  ...for UM alumni, faculty/staff and members of the greater Washington/<wbr>Baltimore Community
+                  </p>
+               </div>
+            </div>
+            <!-- Feature -->
+            <div class="col-sm-4 feature" ng-controller="EventsCtrl as events">
+               <div class="text">
+                  <h3 class="footer_header">
+                     Upcoming Events
+                  </h3>
+                  <div class="events-outer">
+                     <div class="individual-event" ng-repeat="event in events.eventList | futurePast">
+                        <h4>{{ event.name }}</h4>
+			<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
+			<img ng-src="{{event.image.previews[2].url}}" />
+			<p>
+			{{ event.desc }}
+			</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Feature -->
+            <div class="col-sm-4 feature last" ng-controller="EventsCtrl as events">
+                <div class="text">
+                  <h3 class="footer_header">
+                     Recent Concerts
+                  </h3>
+                  <div class="events-outer">
+                     <div class="individual-event" ng-repeat="event in events.eventList | futurePast : true">
+                        <h4>{{ event.name }}</h4>
+			<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
+			{{ event.desc }}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
