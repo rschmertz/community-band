@@ -1272,6 +1272,16 @@
         transition: background linear .2s, box-shadow linear .2s; }
         #contact .map .box_wrapp a.btn:hover {
           background: #252528; }
+	.contact_info {
+	    float: left;
+	    max-width: 270px;
+	    padding: 0 30px 0 0;
+	}
+	.contact_info  ul.street{
+            list-style: none;
+            margin: 0;
+            padding: 0; }
+	}
 
 .contacticos {
   background: url("../../img/contact_icos.png") no-repeat;
