@@ -174,7 +174,7 @@ $(document).ready(function () {
 
 
   }])
-    .controller('EventsCtrl', ['$scope', '$q', 'Events', 'CardAttachments', function ($scope, $q, Events, CardAttachments) {
+    .controller('EventsCtrl', ['$scope', '$q', 'Events', 'DocUtils', 'CardAttachments', function ($scope, $q, Events, DocUtils, CardAttachments) {
 
         this.eventList = [];//{name: 'name1', due: 'due1', simpleLocation: 'dekelboum'}];
         var self = this;
@@ -187,24 +187,28 @@ $(document).ready(function () {
             var cardList = data;
             cardList.forEach(function (card) {
                 card.doclist = [];
-                var what = CardAttachments.query({ id: card.id }, function (data) {
+                var attachmentsPromise = CardAttachments.query({ id: card.id }, function (data) {
                     data.forEach(function(attachment) {
                         if (attachment.name.match(imgNameRegex)) {
                             if (!card.image) {
                                 card.image = attachment;
-                                var index = Math.min(4, attachment.previews.length - 1); // Don't pick a preview size larger than 4
+                                for (var index = attachment.previews.length - 1;
+                                     index > 0 &&
+                                     attachment.previews[index].height > 300;
+                                     index--);
                                 card.largeImage = attachment.previews[index];
                             };
                         } else if (attachment.name.match(docNameRegex)) {
-                            doclist.push(attachment);
+                            attachment.icon = DocUtils.getMiniIcon(attachment.name);
+                            card.doclist.push(attachment);
                         }
                     });
                 })
-                promises.push(what);
+                promises.push(attachmentsPromise);
             });
-            $q.all(promises).then(function (data) {
-                for (var i = 0; i < data.length && i < cardList.length; i++) {
-                    cardList[i].attachments = data[i];
+            $q.all(promises).then(function (cardAttachments) {
+                for (var i = 0; i < cardAttachments.length && i < cardList.length; i++) {
+                    cardList[i].attachments = cardAttachments[i];
                 };
                 self.eventList = cardList;
             });
