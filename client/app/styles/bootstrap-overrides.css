@@ -44,7 +44,7 @@
   .navbar .navbar-toggle {
     display: block; }
   .navbar .collapse {
-    display: none !important; }
+    display: none; }
   .navbar .navbar-collapse {
     max-height: 340px;
     overflow-x: visible;
@@ -68,3 +68,8 @@
       .navbar ul.navbar-nav .open .dropdown-menu > li > a:hover {
         color: #fff;
         background: none; } }
+
+/* added to fix hamburger menu */
+.navbar .collapse.in {
+    display: block;
+}
