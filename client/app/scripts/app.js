@@ -92,3 +92,8 @@ angular
       })
     }
   ]);
+
+// Lord help me, there must be a better way
+$('div.navbar-collapse.collapse a').click(function (e) {
+    $(e.currentTarget).closest('div').removeClass('in').animate();
+})
