@@ -45,6 +45,9 @@
     display: block; }
   .navbar .collapse {
     display: none; }
+  .navbar-collapse.collapse:not(.in) {
+      display: none !important;
+  }
   .navbar .navbar-collapse {
     max-height: 340px;
     overflow-x: visible;
