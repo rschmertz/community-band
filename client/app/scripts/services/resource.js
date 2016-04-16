@@ -47,7 +47,7 @@ angular.module('mentorApp.services.resource',[])
             return url.replace(/dl=0$/, "dl=1");
         };
     }])
-    .factory('Events', function($resource) {
-        return $resource('https://api.trello.com/1/lists/5663a96b113b6f9eba0d9155/cards');
+    .factory('Events', function($resource, noCacheHash) {
+        return $resource('https://api.trello.com/1/lists/5663a96b113b6f9eba0d9155/cards?nocache=' + noCacheHash);
     })
 ;

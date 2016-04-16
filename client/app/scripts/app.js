@@ -91,7 +91,8 @@ angular
         html: true
       })
     }
-  ]);
+  ])
+  .constant('noCacheHash', Math.floor(Math.random() * 99999999999999).toString(36));
 
 // Lord help me, there must be a better way
 $('div.navbar-collapse.collapse a').click(function (e) {
