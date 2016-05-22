@@ -227,7 +227,7 @@ $(document).ready(function () {
             }
         });
         return output.sort(function (a, b) {
-            return (new Date(a.due) > new Date(b.due)) && !past;
+            return (new Date(a.due) > new Date(b.due)) != past;
         });
     };
 })
