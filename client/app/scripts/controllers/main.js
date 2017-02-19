@@ -220,14 +220,27 @@ $(document).ready(function () {
         var output = [];
         var today = new Date();
         past = past || false
+	var reverseFactor = past ? -1 : 1
         eventlist.forEach(function(event) {
             var d = new Date(event.due);
             if ((d >= today) != past) {
                 output.push(event);
             }
         });
+	
         return output.sort(function (a, b) {
-            return (new Date(a.due) > new Date(b.due)) != past;
+            return (new Date(a.due) - new Date(b.due)) * reverseFactor;
         });
     };
+})
+.filter('cardDateSort', function () {
+    return function (eventlist, reverse) {
+	var reverseFactor = reverse ? -1 : 1;
+	var eListCopy = eventlist.slice(0);
+	return(eListCopy.sort(function (a, b) {
+	    var diff = (new Date(a.due) - new Date(b.due)) * reverseFactor;
+	    return diff;
+	}));
+
+    }
 })
