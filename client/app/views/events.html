@@ -9,7 +9,17 @@
 	<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
 	<img ng-src="{{event.largeImage.url}}"/>
 	<p></p>
-	<p>{{ event.desc }} <span ng-repeat="doc in event.doclist"> <a href="{{doc.url}}"> <img ng-src="{{doc.icon}}" /></a></span></p>
+	<p>{{ event.desc }}</p>
+	<p>
+	  <span ng-repeat="link in event.linklist"> <a href="{{link.url}}">{{ link.name }}</a></span>
+	  <span ng-if="event.linklist.length > 0 && event.doclist.length > 0"> | </span>
+	  <span ng-if="event.doclist.length > 0">Attachments:
+	    <span ng-repeat="doc in event.doclist">
+	      <a href="{{doc.url}}"> <img ng-src="{{doc.icon}}" />
+	      </a>
+	    </span>
+	  </span>
+	</p>
 	<hr />
       </div>
     </div>

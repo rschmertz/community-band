@@ -187,6 +187,7 @@ $(document).ready(function () {
             var cardList = data;
             cardList.forEach(function (card) {
                 card.doclist = [];
+                card.linklist = [];
                 var attachmentsPromise = CardAttachments.query({ id: card.id }, function (data) {
                     data.forEach(function(attachment) {
                         if (attachment.name.match(imgNameRegex)) {
@@ -201,6 +202,8 @@ $(document).ready(function () {
                         } else if (attachment.name.match(docNameRegex)) {
                             attachment.icon = DocUtils.getMiniIcon(attachment.name);
                             card.doclist.push(attachment);
+                        } else {
+                            card.linklist.push(attachment);
                         }
                     });
                 })
@@ -220,7 +223,7 @@ $(document).ready(function () {
         var output = [];
         var today = new Date();
         past = past || false
-	var reverseFactor = past ? -1 : 1
+        var reverseFactor = past ? -1 : 1
         eventlist.forEach(function(event) {
             var d = new Date(event.due);
             if ((d >= today) != past) {
@@ -235,12 +238,12 @@ $(document).ready(function () {
 })
 .filter('cardDateSort', function () {
     return function (eventlist, reverse) {
-	var reverseFactor = reverse ? -1 : 1;
-	var eListCopy = eventlist.slice(0);
-	return(eListCopy.sort(function (a, b) {
-	    var diff = (new Date(a.due) - new Date(b.due)) * reverseFactor;
-	    return diff;
-	}));
+        var reverseFactor = reverse ? -1 : 1;
+        var eListCopy = eventlist.slice(0);
+        return(eListCopy.sort(function (a, b) {
+            var diff = (new Date(a.due) - new Date(b.due)) * reverseFactor;
+            return diff;
+        }));
 
     }
 })
