@@ -21,7 +21,7 @@
     "angular-scenario": "1.2.15"
   },
   "resolutions": {
-    "angular": "^1.2.21",
+    "angular": "1.2.15",
     "bootstrap": "^3.2.0"
   }
 }
