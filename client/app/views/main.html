@@ -92,7 +92,7 @@
                      Recent Concerts
                   </h3>
                   <div class="events-outer">
-                     <div class="individual-event" ng-repeat="event in events.eventList | futurePast : true">
+                     <div class="individual-event" ng-repeat="event in events.eventList | filter: pastYearEvents | futurePast : true">
                         <h4>{{ event.name }}</h4>
 			<p><em>{{ event.due | date : 'MMM dd, yyyy h:mma' : 'EDT' }}</em></p>
 			{{ event.desc }}
