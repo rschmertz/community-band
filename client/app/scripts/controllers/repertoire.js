@@ -103,6 +103,14 @@ angular.module('mentorApp.controllers.about', [])
                       name: "O Magnum Mysterium – Lauridsen",
                   }
               ]
+          }, {
+              genre: "Holiday",
+              listing: [
+                  {
+                      name: "Sleigh Ride - Leroy Anderson",
+                      link: "https://youtu.be/V-zUbe9laks",
+                  }
+              ]
           }
       ];
 
