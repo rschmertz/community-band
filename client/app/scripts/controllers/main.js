@@ -181,17 +181,17 @@ $(document).ready(function () {
         var imgNameRegex = new RegExp(".+\.(png|jpg|gif)");
         var docNameRegex = new RegExp(".+\.(pdf|doc|docx)");
 
-	var compDate = new Date();
-	var lastCalYear = compDate.getFullYear() - 1;
-	compDate.setFullYear(lastCalYear);
-	console.log("Compdate is", compDate);
-	$scope.pastYearEvents = function (event, one, two) {
-	    
-	    var concertDate = new Date(event.due);
-	    var recent = concertDate > compDate;
-	    //console.log(event.name + " is " + (recent ? '' : 'not ') + 'recent');
-	    return recent;
-	};
+        var compDate = new Date();
+        var lastCalYear = compDate.getFullYear() - 1;
+        compDate.setFullYear(lastCalYear);
+        console.log("Compdate is", compDate);
+        $scope.pastYearEvents = function (event, one, two) {
+            
+            var concertDate = new Date(event.due);
+            var recent = concertDate > compDate;
+            //console.log(event.name + " is " + (recent ? '' : 'not ') + 'recent');
+            return recent;
+        };
 
 	
 
