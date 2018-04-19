@@ -182,11 +182,18 @@ $(document).ready(function () {
         var docNameRegex = new RegExp(".+\.(pdf|doc|docx)");
 
         Events.query(function(data, extra) {
-            console.log("events query data is", data);
+            //console.log("events query data is", data);
             var promises = [];
             var cardList = data;
+            var descTruncLength = 50;
             cardList.forEach(function (card) {
                 card.doclist = [];
+                if (card.desc.length > descTruncLength) {
+                    card.truncDesc = card.desc.slice(0,descTruncLength - 2) + '...';
+                    //console.log("truncDesc =" + card.truncDesc);
+                } else {
+                    card.truncDesc = card.desc; 
+                }
                 card.linklist = [];
                 var attachmentsPromise = CardAttachments.query({ id: card.id }, function (data) {
                     data.forEach(function(attachment) {
