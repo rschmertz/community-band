@@ -398,3 +398,8 @@ ul.regular-list li{
 .nav.navbar-nav.navbar-right{
   margin-top: 20px;
 }
+
+img.acb-banner {
+  max-width: 100%;
+  height: auto;
+}
