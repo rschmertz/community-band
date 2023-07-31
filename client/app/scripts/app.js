@@ -71,7 +71,7 @@ angular
         templateUrl: 'views/docs.html',
       })
       .when('/contact', {
-        templateUrl: 'views/contact.html',
+        templateUrl: 'views/contact.html?date=20230623',
         controller: 'ContactCtrl',
         name: 'contact'
       })
