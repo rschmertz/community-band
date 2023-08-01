@@ -23,7 +23,7 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html?date=20211017',
+        templateUrl: 'views/main.html?date=20230731',
         controller: 'MainCtrl',
         name: 'main'
       })
