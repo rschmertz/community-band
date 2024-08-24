@@ -23,7 +23,7 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html?date=20230731',
+        templateUrl: 'views/main.html?date=20240823',
         controller: 'MainCtrl',
         name: 'main'
       })
@@ -71,7 +71,7 @@ angular
         templateUrl: 'views/docs.html',
       })
       .when('/contact', {
-        templateUrl: 'views/contact.html?date=20230623',
+        templateUrl: 'views/contact.html?date=20240824',
         controller: 'ContactCtrl',
         name: 'contact'
       })

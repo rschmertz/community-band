@@ -71,22 +71,12 @@
 		    You can pay membership dues, or make a donation to the Friends of the Maryland Community Band below! Or make checks payable to Friends of the Maryland Community Band!
 		  </p>
 		  <p>
-		    <form target="_top" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		      <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="BXAN8URL2N5FU" />
-            <input type="hidden" name="on0" value="Membership Dues"/>
-		      <h4>Membership Dues</h4>
-		      <table>
-			<tr> 
-			  <td><select name="os0">
-                    <option value="One Semester-">One Semester - $53.00 USD</option>
-                    <option value="Full Year-">Full Year - $103.00 USD</option>
-			  </select> </td>
-			</tr>
-		      </table>
-		      <input type="hidden" name="currency_code" value="USD">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" id="Paypal_imput_btn" />
-          </form>
+<div id="paypal-container-GZLFGH2JNCVL2"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "GZLFGH2JNCVL2",
+  }).render("#paypal-container-GZLFGH2JNCVL2");
+</script>
 		  </p>
 		  <h4>Make a Donation</h4>
 		  Use PayPal's "instructions to the seller" field for any purpose, such as to indicate a donation for a specific purpose, or a donation in someone's name.
