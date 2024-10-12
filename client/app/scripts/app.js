@@ -60,7 +60,7 @@ angular
         templateUrl: 'views/press.html',
       })
       .when('/events/', {
-        templateUrl: 'views/events.html?date-20240924',
+        templateUrl: 'views/events.html?date=20241012',
       })
       .when('/blog2/', {
         templateUrl: 'views/blog2.html',
